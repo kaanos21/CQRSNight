@@ -13,6 +13,7 @@ namespace CQRSNight.CQRSDesignPattern.Handlers.CategoryHandlers
         }
         public List<GetCategoryQueryResult> Handle()
         {
+            //deneme
             var values = _context.Categories.Select(x => new GetCategoryQueryResult
             {
                 CategoryId = x.CategoryId,
