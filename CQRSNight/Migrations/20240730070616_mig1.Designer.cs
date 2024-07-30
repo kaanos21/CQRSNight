@@ -4,6 +4,7 @@ using CQRSNight.Dal.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CQRSNight.Migrations
 {
     [DbContext(typeof(CQRSContext))]
-    partial class CQRSContextModelSnapshot : ModelSnapshot
+    [Migration("20240730070616_mig1")]
+    partial class mig1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,30 +101,6 @@ namespace CQRSNight.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("CQRSNight.Dal.Entities.Employee", b =>
-                {
-                    b.Property<int>("EmployeeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeId"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Salary")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("SurName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("EmployeeId");
-
-                    b.ToTable("Employees");
-                });
-
             modelBuilder.Entity("CQRSNight.Dal.Entities.Location", b =>
                 {
                     b.Property<int>("Id")
@@ -198,6 +176,22 @@ namespace CQRSNight.Migrations
                     b.HasIndex("CarId");
 
                     b.ToTable("Schdules");
+                });
+
+            modelBuilder.Entity("CQRSNight.Dal.Entities.XdXd", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("Xd")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("xdXds");
                 });
 
             modelBuilder.Entity("CQRSNight.Dal.Entities.Car", b =>

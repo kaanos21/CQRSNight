@@ -1,0 +1,39 @@
+﻿@model CQRSNight.CQRSDesignPattern.Results.CarResults.GetCarByIdQueryResult
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <div class="alert alert-primary">Yeni Araba Ekleme</div>
+        <label>Araba Rengi</label>
+        <input type="text" asp-for="Color" class="form-control" />
+        <br />
+        <label>Kilometre</label>
+        <input type="text" asp-for="Km" class="form-control" />
+        <br />
+        <label>Koltuk Sayısı</label>
+        <input type="text" asp-for="Seat" class="form-control" />
+        <br />
+        <label>Üretim Yılı</label>
+        <input type="text" asp-for="ProductionYear" class="form-control" />
+        <br />
+        <label>Fiyat</label>
+        <input type="text" asp-for="Price" class="form-control" />
+        <br />
+        <label>Vites</label>
+        <input type="text" asp-for="Transmission" class="form-control" />
+        <br />
+        <label>Bran Id </label>
+        <input type="text" asp-for="BrandId" class="form-control" />
+        <br />
+        <label>Location Id si</label>
+        <input type="text" asp-for="LocaionId" class="form-control" />
+        <br />
+        <button class="btn btn-primary">Kategoriyi Oluştur</button>
+    </div>
+</form>
+

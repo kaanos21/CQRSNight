@@ -1,0 +1,28 @@
+﻿@model List<CQRSNight.MediatorDesignPattern.Results.LocationResult.GetLocationQueryResult>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <div class="alert alert-primary">Kategori Listesi</div>
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Adres :</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Address</td>
+                <td> <a href="/Location/RemoveLocation/@item.Id" class="btn btn-danger">Sil</a> </td>
+                <td> <a href="/Location/UpdateLocation/@item.Id" class="btn btn-info">Güncelle</a> </td>
+            </tr>
+        }
+    </table>
+    <a href="/Brand/CreateBrand/" class="btn btn-info">Yeni Kategori Girişi</a>
+</div>

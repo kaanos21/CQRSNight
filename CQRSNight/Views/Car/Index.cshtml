@@ -1,0 +1,38 @@
+﻿@model List<CQRSNight.CQRSDesignPattern.Results.CarResults.GetCarQueryResult>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <div class="alert alert-primary">Araba Listesi</div>
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Renk</th>
+            <th>Kilometre</th>
+            <th>Koltuk Sayısı</th>
+            <th>Üretim Yılı</th>
+            <th>Fiyat</th>
+            <th>Vites</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Color</td>
+                <td>@item.Km</td>
+                <td>@item.Seat</td>
+                <td>@item.ProductionYear</td>
+                <td>@item.Price</td>
+                <td>@item.Transmission</td>
+                <td> <a href="/Car/RemoveCar/@item.Id" class="btn btn-danger">Sil</a> </td>
+                <td> <a href="/Car/UpdateCar/@item.Id" class="btn btn-info">Güncelle</a> </td>
+            </tr>
+        }
+    </table>
+    <a href="/Car/CreateCar/" class="btn btn-info">Yeni Kategori Girişi</a>
+</div>

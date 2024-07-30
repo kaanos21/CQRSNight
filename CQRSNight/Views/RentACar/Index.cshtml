@@ -1,0 +1,14 @@
+﻿@model CQRSNight.DTO.CarFilterDto
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<form method="post" asp-action="CarList">
+    @Html.DropDownListFor(x => x.PickUpLocationId, (List<SelectListItem>)ViewBag.PickUpLocation, "Teslim Alacağınız Lokasyonu Seçiniz", new { @class = "custom-select form-control" })
+    <input type="datetime" asp-for="PickUpDate" class="form-control" />
+    <input type="datetime" asp-for="DropOffDate" class="form-control" />
+    <button type="submit" class="btn btn-primary">Uygun Araçları Listele</button>
+</form>
+
+

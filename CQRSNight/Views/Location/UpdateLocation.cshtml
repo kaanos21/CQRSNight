@@ -1,0 +1,20 @@
+﻿@model CQRSNight.MediatorDesignPattern.Results.LocationResult.GetLocationByIdQueryResult
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<form method="post">
+    <div class="container">
+        <br /><br />
+        <div class="alert alert-primary"> Personel Güncelleme</div>
+        <label>Personel Id</label>
+        <input type="text" asp-for="Id" class="form-control" />
+        <br />
+        <label>Personel Adı</label>
+        <input type="text" asp-for="Address" class="form-control" />
+        <br />
+        <button class="btn btn-success">Personeli Oluştur</button>
+    </div>
+</form>
